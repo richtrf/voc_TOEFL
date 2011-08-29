@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 import sqlite3
 
+import os
 
 def input(request):
     return render_to_response("input.html")
@@ -10,7 +11,7 @@ def generate(request):
     rannum=request.POST['itemno']
     
     ## SQLITE3 ##
-    db=sqlite3.connect("toefl.db")
+    db=sqlite3.connect(os.path.join(ROOT_PATH,"toefl.db"))
     cursor=db.cursor()
     cursor.execute("SELECT A,B,C,D,example,Ans FROM dist ORDER BY RANDOM() LIMIT %s" % (rannum))
     r=cursor.fetchall()

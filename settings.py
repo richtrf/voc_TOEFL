@@ -1,3 +1,6 @@
+import os
+ROOT_PATH=os.path.dirname('__file__')
+
 # Django settings for FAST project.
 
 DEBUG = True
@@ -66,7 +69,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    'templates',
+    os.path.join(ROOT_PATH,'templates')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
