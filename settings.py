@@ -1,5 +1,5 @@
 import os
-ROOT_PATH=os.path.dirname('__file__')
+ROOT_PATH=os.path.dirname(__file__)
 
 # Django settings for FAST project.
 
